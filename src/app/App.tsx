@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { LayoutDashboard, PlusCircle, ClipboardList, Settings } from "lucide-react";
 import { WeightProvider } from "./context/WeightContext";
 import { DashboardPage } from "./components/DashboardPage";
@@ -129,6 +129,9 @@ function WeightApp() {
 }
 
 export default function App() {
+  useEffect(() => {
+    document.getElementById("app-loading")?.remove();
+  }, []);
   return (
     <WeightProvider>
       <WeightApp />
